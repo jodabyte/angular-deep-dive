@@ -2,13 +2,14 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "cli": {
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "analytics": false
   },
   "newProjectRoot": "projects",
   "projects": {
     "angular-deep-dive": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": { },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -59,7 +60,10 @@
               "buildTarget": "angular-deep-dive:build:production"
             },
             "development": {
-              "buildTarget": "angular-deep-dive:build:development"
+              "buildTarget": "angular-deep-dive:build:development",
+              "allowedHosts": [ "localhost", "0.0.0.0" ],
+              "host": "0.0.0.0",
+              "poll": 2000
             }
           },
           "defaultConfiguration": "development"
