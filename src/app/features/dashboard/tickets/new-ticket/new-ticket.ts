@@ -11,10 +11,13 @@ import { Control } from '../../../../shared/control/control';
 })
 export class NewTicket {
   @ViewChild('form') private form?: ElementRef<HTMLFormElement>;
+  enteredTitle = '';
+  enteredText = '';
   add = output<{ title: string; text: string }>();
 
-  onSubmit(title: string, ticketText: string) {
-    this.add.emit({ title: title, text: ticketText });
-    this.form?.nativeElement.reset();
+  onSubmit() {
+    this.add.emit({ title: this.enteredTitle, text: this.enteredText });
+    this.enteredTitle = '';
+    this.enteredText = '';
   }
 }
