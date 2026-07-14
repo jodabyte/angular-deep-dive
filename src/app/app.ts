@@ -1,8 +1,9 @@
+import { DatePipe, DecimalPipe } from '@angular/common';
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [DatePipe, DecimalPipe],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
@@ -15,9 +16,7 @@ export class App {
     chicago: 65.0775238,
   };
 
-  historicTemperatures = [
-    25, 37, 19, -4, 28, 21, 19, 28, 33, 31, 9, 11, 5, -12, -5,
-  ];
+  historicTemperatures = [25, 37, 19, -4, 28, 21, 19, 28, 33, 31, 9, 11, 5, -12, -5];
 
   onReset(index: number) {
     this.historicTemperatures[index] = 18;
