@@ -3,10 +3,11 @@ import { Auth } from './auth/auth';
 import { AuthComponent } from './auth/auth.component';
 import { AuthService } from './auth/auth.service';
 import { LearningResourcesComponent } from './learning-resources/learning-resources.component';
+import { Log } from './log';
 
 @Component({
   selector: 'app-root',
-  imports: [AuthComponent, LearningResourcesComponent, Auth],
+  imports: [AuthComponent, LearningResourcesComponent, Auth, Log],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
