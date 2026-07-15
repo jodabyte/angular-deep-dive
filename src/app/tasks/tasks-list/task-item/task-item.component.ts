@@ -1,7 +1,7 @@
 import { Component, computed, inject, input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import { Task, TaskStatus } from '../../task.model';
+import { Task, TASK_STATUS_OPTIONS, TaskStatus, taskStatusOptionsProvider } from '../../task.model';
 import { TasksService } from '../../tasks.service';
 
 @Component({
@@ -10,9 +10,11 @@ import { TasksService } from '../../tasks.service';
   imports: [FormsModule],
   templateUrl: './task-item.component.html',
   styleUrl: './task-item.component.css',
+  providers: [taskStatusOptionsProvider],
 })
 export class TaskItemComponent {
   private tasksService = inject(TasksService);
+  taskStatusOptions = inject(TASK_STATUS_OPTIONS);
   task = input.required<Task>();
   taskStatus = computed(() => {
     switch (this.task().status) {
