@@ -24,18 +24,27 @@ export class UserTasksComponent {
 
   //userName = computed(() => this.userService.users.find((u) => u.id === this.userId())?.name);
 
-  //   ngOnInit(): void {
+  // ngOnInit(): void {
+  // alternative to resolveUserName()
+  //
   //     console.log(this.activatedRoute);
-
-  //     const subcription = this.activatedRoute.paramMap.subscribe({
+  //     const subcription1 = this.activatedRoute.paramMap.subscribe({
   //       next: (paramMap) => {
   //         this.userName =
   //           this.userService.users.find((u) => u.id === paramMap.get('userId'))?.name || '';
   //       },
   //     });
+  // this.desctroyRef.onDestroy(() => subcription1.unsubscribe());
 
-  //     this.desctroyRef.onDestroy(() => subcription.unsubscribe());
-  //   }
+  // activatedRoute.data contains all static and resolved data
+  // const subcription2 = this.activatedRoute.data.subscribe({
+  //   next: (data) => {
+  //     console.log(data);
+  //   },
+  // });
+
+  // this.desctroyRef.onDestroy(() => subcription2.unsubscribe());
+  // }
 }
 
 export const resolveUserName: ResolveFn<string> = (
