@@ -1,5 +1,5 @@
 import { Component, DestroyRef, inject, OnInit } from '@angular/core';
-import { ActivatedRoute, RouterLinkWithHref, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
 import { UsersService } from '../users.service';
 
 @Component({
@@ -7,7 +7,7 @@ import { UsersService } from '../users.service';
   standalone: true,
   templateUrl: './user-tasks.component.html',
   styleUrl: './user-tasks.component.css',
-  imports: [RouterOutlet, RouterLinkWithHref],
+  imports: [RouterOutlet, RouterLink],
 })
 export class UserTasksComponent implements OnInit {
   //userId = input.required<string>();
